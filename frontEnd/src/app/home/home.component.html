@@ -1,0 +1,24 @@
+<div class="container">
+    <nav style="background-color: rgb(173, 173, 246); border-style: dotted;">
+        <button (click)="signOut()" class="btn btn-primary" style="border-radius: 50%;">Sign out</button>
+    </nav>
+    <div class="row">
+        <div *ngIf="isResumeUploaded==false else otherContent" class="col-lg-6 col-12 mt-5">
+           
+            <label for="a">Upload resume:</label>
+            <input  (change)="onFileSelected($event)" type="file" id="a" class="form-control">
+            <div class="d-grid gap-2 mt-5">
+                <button type="button" class="btn btn-primary" (click)="Upload()">Upload</button>
+            </div>
+      
+        </div>
+        <ng-template #otherContent>
+            <!-- <button class="btn btn-primary" (click)="downloadFile()">Download Your Resume</button> -->
+            <div class="alert alert-primary mt-5" role="alert">
+                You already have uploaded your resume!
+              </div>
+
+        </ng-template>
+    </div>
+</div>
+

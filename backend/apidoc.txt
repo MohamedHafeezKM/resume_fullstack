@@ -1,0 +1,26 @@
+****************Url End Points****************
+
+1.Register
+url:http://localhost:8000/api/register/
+meathod:post
+data:{username,password}
+authorization:nill
+
+2.Login
+url:http://localhost:8000/api/generate-token/
+meathod:post
+data:{username,password}
+authorization:nill
+
+3.Upload Resume
+url:http://localhost:8000/api/resume/
+meathod:post
+data:{resume file}
+authorization:token
+
+4.Get Resume
+
+url:http://localhost:8000/api/resume/
+meathod:get
+data:nill
+authorization:token

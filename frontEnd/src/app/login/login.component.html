@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4 col-12 bg-danger border border-2 p-4 shadow">
+            <h2 class="text-center">Login</h2>
+            <form [formGroup]="LoginForm" (ngSubmit)="login()" action="">
+                <div>
+                    <label for="a">Username</label>
+                    <input type="text" placeholder="Username" formControlName="username" id="a" class="form-control">
+                </div>
+                <div class="mt-4">
+                    <label for="b">Password</label>
+                    <input type="password" placeholder="Password" formControlName="password" id="b" class="form-control">
+                </div>
+
+                <div class="d-grid gap-2 mt-4">
+                    <button type="submit" class="btn btn-primary" [disabled]="LoginForm.invalid">Login</button>
+                </div>
+                <div class="d-grid gap-2 mt-4">
+                    <a routerLink="/register" class="btn btn-warning">Register</a>
+                </div>
+            </form>
+            <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>{{errorMessage}}</strong> You should check in on some of those fields above.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+                
+            
+        </div>
+        <div class="col-lg-4"></div>
+        
+    </div>
+</div>
